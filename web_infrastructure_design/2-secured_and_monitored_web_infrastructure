@@ -1,0 +1,9 @@
+In this new setup, we add firewalls to protect each server, they filter network traffic in and out ofw a machine.
+We also add a SSL certificate tu secure the traffic, this is now HTTPS, wich means if someone intercepts the traffic, it cannot be read.
+The SSL terminates at the web server, because if it stopped at the load balancer level the traffic between the load balancer and the web servers would be unencrypted.
+We also add 3 clients to monitor to check if something is broken or slow by collecting data and sending it to the monitoring system.
+We can also have an alert triggered if QPS is getting out of control.
+Having only one MySQL server capable of accepting writes is an issue because if the master goes down, the application cannot write to the database anymore
+Having servers with all the same components (database, web server and application server) might be a problem because their consumption will not grow the same way between each of them (we might want to have more database servers than application servers for instance).
+The load-balancer is still a SPOF.
+![schema](2-schema.png)
