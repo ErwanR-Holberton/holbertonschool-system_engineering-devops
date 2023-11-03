@@ -1,0 +1,4 @@
+On this new setup, the load balancer is no longer a SPOF because the load balancer is configured as a cluster so that if one fails, the other takes over.
+We separated each component into its own server so if a component fail the other are still working
+
+![schema](3-schema.png)
