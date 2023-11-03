@@ -1,0 +1,6 @@
+With this new structure we added servers for redondancy and a load balancer to distribute traffic on the servers.
+The balancer can be in Active active mode meaning that both servers are running or active passive meaning that the other are waiting for the first to fail.
+The data is replicated in each database to keep synchronisation, so there is a master database that accept writes and reads while the other(s) only read.
+The load balancer is still a single point of failure.
+We are not managing security on this server, maybe our database does not contains top secret documents so no firewall, no cryptage, no monitoring.
+![schema](1-schema.png)
